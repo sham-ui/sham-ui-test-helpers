@@ -1,14 +1,16 @@
-# sham-ui-test-helpers
+import { Widget, options } from 'sham-ui';
+import { renderer } from '../src';
 
-## Install
-```
-npm install sham-ui-test-helpers -D
-```
+class Label extends Widget {
+    @options
+    get text() {
+        return 'Foo';
+    }
 
-### Usage
-```js
-import Label from './Label.sht';
-import { renderer } from 'sham-ui-test-helpers';
+    html() {
+        return this.options.text;
+    }
+}
 
 it( 'renders correctly', () => {
     const meta = renderer( Label );
@@ -22,14 +24,3 @@ it( 'snapshot correctly', () => {
     const tree = renderer( Label ).toJSON();
     expect( tree ).toMatchSnapshot();
 } );
-```
-
-### Jest config
-```
-"jest": {
-    "transform": {
-        "^.+\\.sht$": "sham-ui-test-helpers",
-        "^.+\\.js$": "babel-jest"
-    },
-}
-```

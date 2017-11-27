@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot correctly 1`] = `
+Object {
+  "ID": "widget",
+  "__data__": null,
+  "html": "Foo",
+  "nodes": null,
+  "options": Object {
+    "actionSequence": Array [
+      "bindEvents",
+      "render",
+    ],
+    "bindOnce": true,
+    "cacheParentContainer": false,
+    "renderAsync": false,
+    "renderAsyncWrapper": [Function],
+    "renderDependence": Array [],
+    "text": "Foo",
+    "types": Array [],
+  },
+}
+`;

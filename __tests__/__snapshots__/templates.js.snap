@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot correctly 1`] = `
+Object {
+  "ID": "widget",
+  "__data__": Object {},
+  "html": "<a></a>",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "__data__": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "label": "Link label",
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+    "url": "127.0.0.1",
+  },
+}
+`;
+
+exports[`snapshot correctly 2`] = `
+Object {
+  "ID": "widget",
+  "__data__": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "label": "Link label",
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+    "url": "127.0.0.1",
+  },
+  "html": "<a href=\\"127.0.0.1\\">Link label</a>",
+  "nodes": Array [
+    Object {
+      "ID": undefined,
+      "__data__": null,
+      "html": null,
+      "nodes": null,
+      "options": null,
+    },
+  ],
+  "options": Object {
+    "actionSequence": Array [
+      "render",
+      "bindEvents",
+    ],
+    "label": "Link label",
+    "renderAsync": false,
+    "renderDependence": Array [],
+    "types": Array [],
+    "url": "127.0.0.1",
+  },
+}
+`;

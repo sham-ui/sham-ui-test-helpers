@@ -1,0 +1,4 @@
+/src/
+/coverage/
+/__test__/
+webpack.config.js
