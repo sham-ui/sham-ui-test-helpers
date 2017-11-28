@@ -1,8 +1,8 @@
 {
   "name": "sham-ui-test-helpers",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "",
-  "main": "preprocessor.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --coverage --no-cache",
     "watch": "jest --watchAll",
@@ -38,7 +38,7 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.sht$": "<rootDir>/preprocessor.js",
+      "^.+\\.sht$": "<rootDir>/index.js",
       "^.+\\.js$": "babel-jest"
     },
     "collectCoverageFrom": [
