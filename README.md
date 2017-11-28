@@ -8,7 +8,7 @@ npm install sham-ui-test-helpers -D
 ### Usage
 ```js
 import Label from './Label.sht';
-import { renderer } from 'sham-ui-test-helpers';
+import renderer from 'sham-ui-test-helpers';
 
 it( 'renders correctly', () => {
     const meta = renderer( Label );
@@ -22,14 +22,4 @@ it( 'snapshot correctly', () => {
     const tree = renderer( Label ).toJSON();
     expect( tree ).toMatchSnapshot();
 } );
-```
-
-### Jest config
-```
-"jest": {
-    "transform": {
-        "^.+\\.sht$": "sham-ui-test-helpers",
-        "^.+\\.js$": "babel-jest"
-    },
-}
 ```
