@@ -13,9 +13,9 @@ if ( env === 'build' ) {
 module.exports = {
     entry: './src/index.js',
     output: {
-        path: path.join( __dirname, 'lib' ),
-        filename: 'index.js',
-        publicPath: '/lib/'
+        path: __dirname,
+        filename: 'renderer.js',
+        publicPath: '/'
     },
     plugins: plugins,
     module: {
