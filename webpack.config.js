@@ -5,9 +5,9 @@ const plugins = [
     new webpack.NoEmitOnErrorsPlugin()
 ];
 
-if ( env === 'build' ) {
-    plugins.push( new webpack.optimize.UglifyJsPlugin( { minimize: true } ) );
-}
+//if ( env === 'build' ) {
+//    plugins.push( new webpack.optimize.UglifyJsPlugin( { minimize: true } ) );
+//}
 
 module.exports = {
     entry: './src/index.js',
