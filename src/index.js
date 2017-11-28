@@ -13,7 +13,7 @@ function toJSON( widget ) {
     }
 }
 
-export function renderer(
+export default function renderer(
     widgetClass,
     widgetOptions = {},
     selector = DEFAULT_SELECTOR,

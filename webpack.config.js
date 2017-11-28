@@ -1,4 +1,3 @@
-const path = require( 'path' );
 const webpack = require( 'webpack' );
 
 const env = process.env.WEBPACK_ENV;
@@ -14,7 +13,7 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: __dirname,
-        filename: 'renderer.js',
+        filename: 'index.js',
         publicPath: '/'
     },
     plugins: plugins,

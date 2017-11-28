@@ -1,6 +1,6 @@
 {
   "name": "sham-ui-test-helpers",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -38,7 +38,7 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.sht$": "<rootDir>/index.js",
+      "^.+\\.sht$": "sham-ui-jest-preprocessor",
       "^.+\\.js$": "babel-jest"
     },
     "collectCoverageFrom": [
@@ -56,8 +56,8 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-jest": "^21.2.0",
     "regenerator-runtime": "^0.11.0",
-    "sham-ui-templates": "0.0.13",
-    "webpack": "^2.7.0"
+    "webpack": "^2.7.0",
+    "sham-ui-jest-preprocessor": "1.0.1"
   },
   "dependencies": {
     "jest": "^21.2.1",

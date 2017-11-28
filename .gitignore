@@ -58,5 +58,5 @@ typings/
 .env
 
 coverage/
-renderer.js
+index.js
 .idea/
