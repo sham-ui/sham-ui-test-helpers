@@ -58,5 +58,4 @@ typings/
 .env
 
 coverage/
-index.js
 .idea/

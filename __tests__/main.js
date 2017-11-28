@@ -1,5 +1,5 @@
 import { Widget, options } from 'sham-ui';
-import renderer from '../src';
+import renderer from '../';
 
 class Label extends Widget {
     @options
