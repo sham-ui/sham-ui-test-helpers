@@ -1,5 +1,5 @@
 import Link from './Link.sht';
-import renderer from '../';
+import renderer from '../src';
 
 it( 'renders correctly', () => {
     const meta = renderer( Link, {

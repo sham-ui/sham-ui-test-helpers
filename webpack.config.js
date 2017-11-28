@@ -9,7 +9,9 @@ module.exports = {
     output: {
         path: __dirname,
         filename: 'index.js',
-        publicPath: '/'
+        publicPath: '/',
+        library: 'sham-ui-test-helper',
+        libraryTarget: 'umd'
     },
     plugins: plugins,
     module: {

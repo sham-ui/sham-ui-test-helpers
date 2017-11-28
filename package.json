@@ -1,11 +1,13 @@
 {
   "name": "sham-ui-test-helpers",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage --no-cache",
-    "watch": "jest --watchAll"
+    "watch": "jest --watchAll",
+    "build": "WEBPACK_ENV=build webpack",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -40,7 +42,7 @@
       "^.+\\.js$": "babel-jest"
     },
     "collectCoverageFrom": [
-      "index.js"
+      "src/*.js"
     ]
   },
   "devDependencies": {
@@ -54,6 +56,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-jest": "^21.2.0",
     "regenerator-runtime": "^0.11.0",
+    "webpack": "^2.7.0",
     "sham-ui-jest-preprocessor": "1.0.1"
   },
   "dependencies": {
