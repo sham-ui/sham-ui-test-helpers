@@ -9,7 +9,7 @@ function toJSON( widget ) {
         html: widget.container === undefined ? null : widget.container.innerHTML,
         options: widget.options === undefined ? null : widget.options,
         nodes: widget.nodes === undefined ? null : widget.nodes.map( toJSON ),
-        __data__: widget.__data__ === undefined ? null : widget.__data__
+        constructorOptions: widget.constructorOptions === undefined ? null : widget.constructorOptions
     }
 }
 
