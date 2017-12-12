@@ -7,11 +7,6 @@ it( 'renders correctly', () => {
         label: 'Link label'
     } );
     expect( meta.widget.ID ).toEqual( 'widget' );
-    expect( meta.widget.container.innerHTML ).toEqual( '<a></a>' );
-    expect( meta.rendered ).toEqual( [ 'widget' ] );
-
-    meta.widget.update();
-    expect( meta.widget.ID ).toEqual( 'widget' );
     expect( meta.widget.container.innerHTML ).toEqual( '<a href=\"127.0.0.1\">Link label</a>' );
     expect( meta.rendered ).toEqual( [ 'widget' ] );
 } );

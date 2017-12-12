@@ -3,12 +3,15 @@
 exports[`snapshot correctly 1`] = `
 Object {
   "ID": "widget",
-  "__data__": Object {},
-  "html": "<a></a>",
+  "constructorOptions": Object {
+    "label": "Link label",
+    "url": "127.0.0.1",
+  },
+  "html": "<a href=\\"127.0.0.1\\">Link label</a>",
   "nodes": Array [
     Object {
       "ID": undefined,
-      "__data__": null,
+      "constructorOptions": null,
       "html": null,
       "nodes": null,
       "options": null,
@@ -31,22 +34,15 @@ Object {
 exports[`snapshot correctly 2`] = `
 Object {
   "ID": "widget",
-  "__data__": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
+  "constructorOptions": Object {
     "label": "Link label",
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "<a href=\\"127.0.0.1\\">Link label</a>",
   "nodes": Array [
     Object {
       "ID": undefined,
-      "__data__": null,
+      "constructorOptions": null,
       "html": null,
       "nodes": null,
       "options": null,

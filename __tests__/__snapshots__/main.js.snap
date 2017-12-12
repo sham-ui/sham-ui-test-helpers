@@ -3,7 +3,7 @@
 exports[`snapshot correctly 1`] = `
 Object {
   "ID": "widget",
-  "__data__": null,
+  "constructorOptions": Object {},
   "html": "Foo",
   "nodes": null,
   "options": Object {
