@@ -1,6 +1,6 @@
 {
   "name": "sham-ui-test-helpers",
-  "version": "1.6.5",
+  "version": "1.7.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "jest": "^21.2.1",
+    "pretty": "^2.0.0",
     "sham-ui": "^1.3.5"
   }
 }

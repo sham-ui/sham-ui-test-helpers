@@ -1,4 +1,5 @@
 import Link from './Link.sht';
+import Dummy from './Dummy.sht';
 import renderer from '../src';
 
 it( 'renders correctly', () => {
@@ -22,3 +23,12 @@ it( 'snapshot correctly', () => {
 } );
 
 
+it( 'pretty html', () => {
+    const meta = renderer( Dummy, {
+        url: '127.0.0.1',
+        label: 'Link label'
+    } );
+    expect( meta.toJSON() ).toMatchSnapshot();
+    meta.widget.update();
+    expect( meta.toJSON() ).toMatchSnapshot();
+} );
