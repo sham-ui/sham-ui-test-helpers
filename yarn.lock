@@ -3672,15 +3672,15 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-sham-ui-jest-preprocessor@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-1.0.5.tgz#ce701aec3c664fe5497d5017f130f0f58593f849"
+sham-ui-jest-preprocessor@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-1.0.6.tgz#b629c74e10f9eb39ee9286c8e4bf24392f7d3d18"
   dependencies:
-    sham-ui-templates "0.0.17"
+    sham-ui-templates "0.0.18"
 
-sham-ui-templates@0.0.17:
-  version "0.0.17"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-0.0.17.tgz#1622d4f28d891fc961c9bd35291a48a1d24d2f11"
+sham-ui-templates@0.0.18:
+  version "0.0.18"
+  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-0.0.18.tgz#dbc42c74a3436f8a7a57e7d0326c1dd9d083f3dd"
   dependencies:
     asciitree "^1.0.2"
     commander "^2.9.0"
