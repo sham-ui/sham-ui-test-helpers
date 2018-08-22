@@ -4,6 +4,10 @@ import pretty from 'pretty';
 const DEFAULT_SELECTOR = 'body';
 const DEFAULT_ID = 'widget';
 
+function withNullAsDefaul( value ) {
+    return undefined === value ? null : value;
+}
+
 function toJSON( widget ) {
     let html = null;
     if ( widget.container !== undefined ) {
@@ -15,10 +19,10 @@ function toJSON( widget ) {
     return {
         html,
         ID: widget.ID,
-        options: widget.options === undefined ? null : widget.options,
+        options: withNullAsDefaul( widget.options ),
         nodes: widget.nodes === undefined ? null : widget.nodes.map( toJSON ),
-        constructorOptions: widget.constructorOptions === undefined ? null : widget.constructorOptions
-    }
+        constructorOptions: withNullAsDefaul( widget.constructorOptions )
+    };
 }
 
 export default function renderer(

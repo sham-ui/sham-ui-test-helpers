@@ -15,14 +15,14 @@ module.exports = {
     },
     plugins: plugins,
     module: {
-        loaders: [ {
+        rules: [ {
             test: /(\.js)$/,
             loader: 'babel-loader',
             exclude: /(node_modules)/,
             include: __dirname
         }, {
             test: /\.sht/,
-            loader: 'sham-ui-templates-loader'
+            loader: 'sham-ui-templates-loader?{}'
         } ]
     }
 };
