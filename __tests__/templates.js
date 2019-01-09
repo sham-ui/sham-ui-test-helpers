@@ -20,6 +20,10 @@ it( 'snapshot correctly', () => {
     expect( meta.toJSON() ).toMatchSnapshot();
     meta.widget.update();
     expect( meta.toJSON() ).toMatchSnapshot();
+    meta.widget.update( {
+        label: 'Updated link label'
+    } );
+    expect( meta.toJSON() ).toMatchSnapshot();
 } );
 
 

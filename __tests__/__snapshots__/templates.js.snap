@@ -2,9 +2,12 @@
 
 exports[`pretty html 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "Dummy",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "label": "Link label",
+    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "
@@ -14,34 +17,17 @@ Object {
   </li>
 </ul>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "label": "Link label",
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-    "url": "127.0.0.1",
-  },
 }
 `;
 
 exports[`pretty html 2`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "Dummy",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "label": "Link label",
+    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "
@@ -51,87 +37,47 @@ Object {
   </li>
 </ul>
 ",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "label": "Link label",
-    "renderAsync": false,
-    "renderDependence": Array [],
-    "types": Array [],
-    "url": "127.0.0.1",
-  },
 }
 `;
 
 exports[`snapshot correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "Link",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "label": "Link label",
-    "url": "127.0.0.1",
-  },
-  "html": "<a href=\\"127.0.0.1\\">Link label</a>",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "label": "Link label",
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
     "url": "127.0.0.1",
   },
+  "html": "<a href=\\"127.0.0.1\\">Link label</a>",
 }
 `;
 
 exports[`snapshot correctly 2`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {
+  "Constructor": "Link",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "label": "Link label",
-    "url": "127.0.0.1",
-  },
-  "html": "<a href=\\"127.0.0.1\\">Link label</a>",
-  "nodes": Array [
-    Object {
-      "ID": undefined,
-      "constructorOptions": null,
-      "html": null,
-      "nodes": null,
-      "options": null,
-    },
-  ],
-  "options": Object {
-    "actionSequence": Array [
-      "render",
-      "bindEvents",
-    ],
-    "label": "Link label",
-    "renderAsync": false,
-    "renderDependence": Array [],
     "types": Array [],
     "url": "127.0.0.1",
   },
+  "html": "<a href=\\"127.0.0.1\\">Link label</a>",
+}
+`;
+
+exports[`snapshot correctly 3`] = `
+Object {
+  "Constructor": "Link",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "label": "Updated link label",
+    "types": Array [],
+    "url": "127.0.0.1",
+  },
+  "html": "<a href=\\"127.0.0.1\\">Updated link label</a>",
 }
 `;

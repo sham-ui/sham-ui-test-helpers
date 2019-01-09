@@ -2,22 +2,13 @@
 
 exports[`snapshot correctly 1`] = `
 Object {
-  "ID": "widget",
-  "constructorOptions": Object {},
-  "html": "Foo",
-  "nodes": null,
-  "options": Object {
-    "actionSequence": Array [
-      "bindEvents",
-      "render",
-    ],
-    "bindOnce": true,
-    "cacheParentContainer": false,
-    "renderAsync": false,
-    "renderAsyncWrapper": [Function],
-    "renderDependence": Array [],
+  "Constructor": "Label",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
     "text": "Foo",
     "types": Array [],
   },
+  "html": "Foo",
 }
 `;

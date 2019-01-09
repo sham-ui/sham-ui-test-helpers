@@ -4,8 +4,11 @@ import pretty from 'pretty';
 const DEFAULT_SELECTOR = 'body';
 const DEFAULT_ID = 'widget';
 
-function withNullAsDefaul( value ) {
-    return undefined === value ? null : value;
+function prepareOptions( options ) {
+    return {
+        ...Object.getPrototypeOf( options ),
+        ...options
+    };
 }
 
 function toJSON( widget ) {
@@ -18,33 +21,36 @@ function toJSON( widget ) {
     }
     return {
         html,
-        ID: widget.ID,
-        options: withNullAsDefaul( widget.options ),
-        nodes: widget.nodes === undefined ? null : widget.nodes.map( toJSON ),
-        constructorOptions: withNullAsDefaul( widget.constructorOptions )
+        Constructor: widget.constructor.name,
+        Options: prepareOptions( widget.options )
     };
 }
 
 export default function renderer(
     widgetClass,
-    widgetOptions = {},
-    selector = DEFAULT_SELECTOR,
-    ID = DEFAULT_ID
+    widgetOptions = {}
 ) {
     const rendered = [];
 
-    document.querySelector( selector ).innerHTML = '';
+    const options = {
+        ID: DEFAULT_ID,
+        containerSelector: DEFAULT_SELECTOR,
+        ...widgetOptions
+    };
+
+    DI.resolve( 'sham-ui:store' ).clear();
+    document.querySelector( options.containerSelector ).innerHTML = '';
 
     let widget;
     DI.bind( 'widget-binder', () => {
-        widget = new widgetClass( selector, ID, widgetOptions );
+        widget = new widgetClass( options );
     } );
 
     const UI = new ShamUI();
-    UI.render.on( 'RenderComplete', ( event, renderedWidgets ) => {
+    UI.render.on( 'RenderComplete', ( renderedWidgets ) => {
         rendered.push( ...renderedWidgets );
     } );
-    UI.render.FORCE_ALL();
+    UI.render.ALL();
 
     return {
         widget,

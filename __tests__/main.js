@@ -7,8 +7,8 @@ class Label extends Widget {
         return 'Foo';
     }
 
-    html() {
-        return this.options.text;
+    render() {
+        return this.container.innerHTML = this.options.text;
     }
 }
 
@@ -23,4 +23,10 @@ it( 'renders correctly', () => {
 it( 'snapshot correctly', () => {
     const tree = renderer( Label ).toJSON();
     expect( tree ).toMatchSnapshot();
+} );
+
+it( 'options', () => {
+    const { widget } = renderer( Label );
+    expect( widget.options.types ).toEqual( [] );
+    expect( widget.options.text ).toEqual( 'Foo' );
 } );
