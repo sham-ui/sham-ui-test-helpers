@@ -1,3 +1,6 @@
+### 2.0.4
+* Update `sham-ui-*` deps
+
 ### 2.0.3
 * Update `sham-ui-*` deps
 * Simplify snapshot
