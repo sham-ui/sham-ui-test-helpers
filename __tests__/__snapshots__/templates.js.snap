@@ -40,6 +40,40 @@ Object {
 }
 `;
 
+exports[`single file widget 1`] = `
+Object {
+  "Constructor": "Panel",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "content": "Default content",
+    "title": "Default title",
+    "types": Array [],
+  },
+  "html": "
+<div>Default title</div>
+<div>Default content</div>
+",
+}
+`;
+
+exports[`single file widget 2`] = `
+Object {
+  "Constructor": "Panel",
+  "Options": Object {
+    "ID": "widget",
+    "containerSelector": "body",
+    "content": "Custom content",
+    "title": "Custom title",
+    "types": Array [],
+  },
+  "html": "
+<div>Custom title</div>
+<div>Custom content</div>
+",
+}
+`;
+
 exports[`snapshot correctly 1`] = `
 Object {
   "Constructor": "Link",

@@ -1,5 +1,6 @@
 import Link from './Link.sht';
 import Dummy from './Dummy.sht';
+import Panel from './Panel.sfw';
 import renderer from '../src';
 
 it( 'renders correctly', () => {
@@ -34,5 +35,16 @@ it( 'pretty html', () => {
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
     meta.widget.update();
+    expect( meta.toJSON() ).toMatchSnapshot();
+} );
+
+
+it( 'single file widget', () => {
+    const meta = renderer( Panel );
+    expect( meta.toJSON() ).toMatchSnapshot();
+    meta.widget.update( {
+        title: 'Custom title',
+        content: 'Custom content'
+    } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

@@ -1,0 +1,17 @@
+<template>
+    <div>
+        {{title}}
+    </div>
+    <div>
+        {{content}}
+    </div>
+</template>
+
+<script>
+    import { options } from 'sham-ui';
+
+    export default class Panel extends Template {
+        @options title = 'Default title';
+        @options content = 'Default content';
+    }
+</script>
