@@ -5580,25 +5580,26 @@ shallow-clone@^1.0.0:
     kind-of "^5.0.0"
     mixin-object "^2.0.1"
 
-sham-ui-jest-preprocessor@2.0.10:
-  version "2.0.10"
-  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-2.0.10.tgz#7641c39389d15fab1a4b9df66caf5bff6f225258"
-  integrity sha512-9saLNHrjjzOVMToa6wiX4evZZJscyvUaOoZLSDFjgei/odf5otrp6aFVvf2fFYrzcVk0z8suOjwF0c2gxRt4FA==
+sham-ui-jest-preprocessor@2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-2.0.12.tgz#a6886d1b8bd1fc410f509ea7681e93fa397c2ba1"
+  integrity sha512-rD2cSfVdk7OqkuQbBAoz9dMP/eHebnYdZBebFjN1n8uRozCRltGYK9EvD5oQWehwvW/di5nIxK7cgrp8etyEqQ==
   dependencies:
-    sham-ui-templates "2.1.1"
+    sham-ui-templates "2.1.2"
+    source-map "^0.5.6"
 
-sham-ui-templates-loader@^2.0.8:
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates-loader/-/sham-ui-templates-loader-2.0.8.tgz#e8e82539f7701306113204201e33fe3178637137"
-  integrity sha512-Pu+qYbcvy4JH8YNe0hkAcKU8+wEw6xfnj7MErWmelLNE7ivUIWeAJd6RdzWIdt6pKfwt8AYSvjymOynDC6ABvQ==
+sham-ui-templates-loader@^2.0.9:
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/sham-ui-templates-loader/-/sham-ui-templates-loader-2.0.9.tgz#7ca6133ef6aab6b5ac9479ac45be902ed12bf699"
+  integrity sha512-QXuVqGsXLe+3eJF3K4vKSmGFOqrSZIL3gP8HtlHy3hzrXizseZzv5dPAzi0fmkg+6XoEBTZzwWFdal/9uR7QCA==
   dependencies:
     loader-utils "^1.1.0"
-    sham-ui-templates "^2.1.1"
+    sham-ui-templates "^2.1.2"
 
-sham-ui-templates@2.1.1, sham-ui-templates@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-2.1.1.tgz#51baca5aae1bed40ea6db4458e8edf84f12c1c11"
-  integrity sha512-21ju3vXyHTXP0pHyXgH4PVq9RS34S1SqMfOUugIgYrJW+8DzGge+EMCrgQNm3oqKhuFS2G0LeszU2Xj/FUO9kA==
+sham-ui-templates@2.1.2, sham-ui-templates@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-2.1.2.tgz#b4bcfb3acb8418b01937fc94f7fa3c7f709ae943"
+  integrity sha512-w43qQCvQAhK0fQN8zoGWG0+kvXjhvxvhXROkWuJ80HSOnRh3Qekma+nLO57aOWnHmEUBJgvaXl00RjsiqLVHrw==
   dependencies:
     "@babel/runtime" "^7.1.5"
     asciitree "^1.0.2"
