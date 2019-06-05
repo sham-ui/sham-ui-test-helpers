@@ -4,7 +4,7 @@ exports[`snapshot correctly 1`] = `
 Object {
   "Constructor": "Label",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "text": "Foo",
     "types": Array [],

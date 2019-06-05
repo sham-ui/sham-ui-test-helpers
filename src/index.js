@@ -2,7 +2,7 @@ import ShamUI, { DI } from 'sham-ui';
 import pretty from 'pretty';
 
 const DEFAULT_SELECTOR = 'body';
-const DEFAULT_ID = 'widget';
+const DEFAULT_ID = 'component';
 
 function prepareOptions( options ) {
     return {
@@ -11,52 +11,52 @@ function prepareOptions( options ) {
     };
 }
 
-function toJSON( widget ) {
+function toJSON( component ) {
     let html = null;
-    if ( widget.container !== undefined ) {
-        html = pretty( widget.container.innerHTML );
+    if ( component.container !== undefined ) {
+        html = pretty( component.container.innerHTML );
         if ( html.indexOf( '\n' ) !== -1 ) {
             html = `\n${html}\n`;
         }
     }
     return {
         html,
-        Constructor: widget.constructor.name,
-        Options: prepareOptions( widget.options )
+        Constructor: component.constructor.name,
+        Options: prepareOptions( component.options )
     };
 }
 
 export default function renderer(
-    widgetClass,
-    widgetOptions = {}
+    componentClass,
+    componentOptions = {}
 ) {
     const rendered = [];
 
     const options = {
         ID: DEFAULT_ID,
         containerSelector: DEFAULT_SELECTOR,
-        ...widgetOptions
+        ...componentOptions
     };
 
     DI.resolve( 'sham-ui:store' ).clear();
     document.querySelector( options.containerSelector ).innerHTML = '';
 
-    let widget;
-    DI.bind( 'widget-binder', () => {
-        widget = new widgetClass( options );
+    let component;
+    DI.bind( 'component-binder', () => {
+        component = new componentClass( options );
     } );
 
     const UI = new ShamUI();
-    UI.render.on( 'RenderComplete', ( renderedWidgets ) => {
-        rendered.push( ...renderedWidgets );
+    UI.render.on( 'RenderComplete', ( renderedComponents ) => {
+        rendered.push( ...renderedComponents );
     } );
     UI.render.ALL();
 
     return {
-        widget,
+        component,
         rendered,
         toJSON() {
-            return toJSON( widget );
+            return toJSON( component );
         }
     };
 }

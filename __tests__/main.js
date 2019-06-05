@@ -1,7 +1,7 @@
-import { Widget, options } from 'sham-ui';
+import { Component, options } from 'sham-ui';
 import renderer from '../src';
 
-class Label extends Widget {
+class Label extends Component {
     @options
     get text() {
         return 'Foo';
@@ -15,9 +15,9 @@ class Label extends Widget {
 it( 'renders correctly', () => {
     const meta = renderer( Label );
 
-    expect( meta.widget.ID ).toEqual( 'widget' );
-    expect( meta.widget.container.innerHTML ).toEqual( 'Foo' );
-    expect( meta.rendered ).toEqual( [ 'widget' ] );
+    expect( meta.component.ID ).toEqual( 'component' );
+    expect( meta.component.container.innerHTML ).toEqual( 'Foo' );
+    expect( meta.rendered ).toEqual( [ 'component' ] );
 } );
 
 it( 'snapshot correctly', () => {
@@ -26,7 +26,7 @@ it( 'snapshot correctly', () => {
 } );
 
 it( 'options', () => {
-    const { widget } = renderer( Label );
-    expect( widget.options.types ).toEqual( [] );
-    expect( widget.options.text ).toEqual( 'Foo' );
+    const { component } = renderer( Label );
+    expect( component.options.types ).toEqual( [] );
+    expect( component.options.text ).toEqual( 'Foo' );
 } );

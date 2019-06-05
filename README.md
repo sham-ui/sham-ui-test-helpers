@@ -13,9 +13,9 @@ import renderer from 'sham-ui-test-helpers';
 it( 'renders correctly', () => {
     const meta = renderer( Label );
 
-    expect( meta.widget.ID ).toEqual( 'widget' );
-    expect( meta.widget.container.innerHTML ).toEqual( 'Foo' );
-    expect( meta.rendered ).toEqual( [ 'widget' ] );
+    expect( meta.component.ID ).toEqual( 'component' );
+    expect( meta.component.container.innerHTML ).toEqual( 'Foo' );
+    expect( meta.rendered ).toEqual( [ 'component' ] );
 } );
 
 it( 'snapshot correctly', () => {

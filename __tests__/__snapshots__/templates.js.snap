@@ -4,7 +4,7 @@ exports[`pretty html 1`] = `
 Object {
   "Constructor": "Dummy",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "label": "Link label",
     "types": Array [],
@@ -24,7 +24,7 @@ exports[`pretty html 2`] = `
 Object {
   "Constructor": "Dummy",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "label": "Link label",
     "types": Array [],
@@ -40,11 +40,11 @@ Object {
 }
 `;
 
-exports[`single file widget 1`] = `
+exports[`single file component 1`] = `
 Object {
   "Constructor": "Panel",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "content": "Default content",
     "title": "Default title",
@@ -57,11 +57,11 @@ Object {
 }
 `;
 
-exports[`single file widget 2`] = `
+exports[`single file component 2`] = `
 Object {
   "Constructor": "Panel",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "content": "Custom content",
     "title": "Custom title",
@@ -78,7 +78,7 @@ exports[`snapshot correctly 1`] = `
 Object {
   "Constructor": "Link",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "label": "Link label",
     "types": Array [],
@@ -92,7 +92,7 @@ exports[`snapshot correctly 2`] = `
 Object {
   "Constructor": "Link",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "label": "Link label",
     "types": Array [],
@@ -106,7 +106,7 @@ exports[`snapshot correctly 3`] = `
 Object {
   "Constructor": "Link",
   "Options": Object {
-    "ID": "widget",
+    "ID": "component",
     "containerSelector": "body",
     "label": "Updated link label",
     "types": Array [],

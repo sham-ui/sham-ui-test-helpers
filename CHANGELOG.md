@@ -1,3 +1,7 @@
+### 3.0.0
+* Update `sham-ui-*` deps
+* Update babel 
+
 ### 2.0.7
 * Update `sham-ui-*` deps
 
