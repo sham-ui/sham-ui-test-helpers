@@ -6,12 +6,20 @@ const plugins = [
 
 module.exports = {
     entry: './src/index.js',
+    target: 'node',
+    externals: {
+        'sham-ui-templates': 'sham-ui-templates',
+        'sham-ui-templates/lib/compiler/sourceNode': 'sham-ui-templates/lib/compiler/sourceNode',
+        '@babel/core': '@babel/core',
+        'fs': 'fs',
+        'sham-ui': 'sham-ui'
+    },
     output: {
         path: __dirname,
         filename: 'index.js',
         publicPath: '/',
         library: 'sham-ui-test-helper',
-        libraryTarget: 'umd'
+        libraryTarget: 'umd',
     },
     plugins: plugins,
     module: {

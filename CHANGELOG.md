@@ -1,3 +1,6 @@
+### 3.1.0
+* Add `compile` & `compileAsSFC`
+
 ### 3.0.1
 * Update dependencies
 

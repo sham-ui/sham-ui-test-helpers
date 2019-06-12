@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inline 1`] = `
+Object {
+  "Constructor": "dummy",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "content from options",
+    "title": "title from options",
+    "types": Array [],
+  },
+  "html": "
+<main>
+  <div>title from options</div>
+  <div>content from options</div>
+</main>
+",
+}
+`;
+
+exports[`inline 2`] = `
+Object {
+  "Constructor": "dummy",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "new content",
+    "title": "new title",
+    "types": Array [],
+  },
+  "html": "
+<main>
+  <div>new title</div>
+  <div>new content</div>
+</main>
+",
+}
+`;
+
+exports[`sfc 1`] = `
+Object {
+  "Constructor": "dummy",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "content from options",
+    "title": "title from options",
+    "types": Array [],
+  },
+  "html": "
+<main>
+  <div>title from options</div>
+  <div>content from options</div>
+</main>
+",
+}
+`;
+
+exports[`sfc 2`] = `
+Object {
+  "Constructor": "dummy",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "new content",
+    "title": "new title",
+    "types": Array [],
+  },
+  "html": "
+<main>
+  <div>new title</div>
+  <div>new content</div>
+</main>
+",
+}
+`;
