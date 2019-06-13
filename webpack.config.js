@@ -12,7 +12,8 @@ module.exports = {
         'sham-ui-templates/lib/compiler/sourceNode': 'sham-ui-templates/lib/compiler/sourceNode',
         '@babel/core': '@babel/core',
         'fs': 'fs',
-        'sham-ui': 'sham-ui'
+        'sham-ui': 'sham-ui',
+        'find-babel-config': 'find-babel-config'
     },
     output: {
         path: __dirname,

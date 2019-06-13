@@ -28,7 +28,6 @@ it( 'inline', () => {
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
 
-
 it( 'sfc', () => {
     const meta = renderer(
         compileAsSFC`
@@ -44,22 +43,22 @@ it( 'sfc', () => {
             <script>
                 import { options } from 'sham-ui';
                 
-                class dummy extends Template {
-                    @options title = 'Default title';
-                    @options content = 'Default content';
+                export default class extends Template {
+                    @options title = 'Default sfc title';
+                    @options content = 'Default sfc content';
                 }
             </script>
         `,
         {
-            title: 'title from options',
-            content: 'content from options'
+            title: 'title from sfc options',
+            content: 'content from sfc options'
         }
     );
     expect( meta.toJSON() ).toMatchSnapshot();
     expect( meta.component ).toBeInstanceOf( Component );
     meta.component.update( {
-        title: 'new title',
-        content: 'new content'
+        title: 'new sfc title',
+        content: 'new sfc content'
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );

@@ -1,3 +1,6 @@
+### 3.1.1
+* Support exports for `compileAsSFC`
+
 ### 3.1.0
 * Add `compile` & `compileAsSFC`
 

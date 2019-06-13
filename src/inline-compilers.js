@@ -1,47 +1,9 @@
 import { Compiler } from 'sham-ui-templates';
 import { sourceNode } from 'sham-ui-templates/lib/compiler/sourceNode';
 import { transformSync } from '@babel/core';
-
-const babel = {
-    'presets': [
-        [
-            '@babel/preset-env',
-            {
-                'targets': {
-                    'browsers': [
-                        'last 2 versions',
-                        'safari >= 7'
-                    ]
-                }
-            }
-        ]
-    ],
-    'plugins': [
-        [
-            '@babel/plugin-proposal-decorators',
-            {
-                'legacy': true
-            }
-        ],
-        [
-            '@babel/plugin-proposal-class-properties',
-            {
-                'loose': true
-            }
-        ],
-        '@babel/plugin-transform-modules-umd',
-        '@babel/plugin-proposal-function-bind',
-        [
-            '@babel/plugin-proposal-object-rest-spread',
-            {
-                'useBuiltIns': true
-            }
-        ]
-    ]
-};
-
+import findBabelConfig from 'find-babel-config';
 const compiler = new Compiler( {
-    asModule: false
+    asModule: true
 } );
 
 const compilerForSFC = new Compiler( {
@@ -50,8 +12,14 @@ const compilerForSFC = new Compiler( {
 } );
 
 function evalComponent( code ) {
-    const fn = new Function( `var require=arguments[0];var exports=arguments[1];${code}return dummy;` );
-    return fn( require, exports );
+    const fn = new Function( [
+        'var module, exports, require;',
+        'require=arguments[0];',
+        'module=exports=arguments[1];',
+        code,
+        'return module.exports || exports.default;'
+    ].join( '\n' ) );
+    return fn( require, {} );
 }
 
 export function compile( strings ) {
@@ -73,6 +41,7 @@ export function compileAsSFC( strings ) {
             strings.join( '\n' ).trim()
         )
     );
-    const { code } = transformSync( node.toString(), babel );
+    const { config } = findBabelConfig.sync( process.cwd() );
+    const { code } = transformSync( node.toString(), config );
     return evalComponent( code );
 }
