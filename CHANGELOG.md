@@ -1,3 +1,6 @@
+### 3.1.2
+* Update dependencies
+
 ### 3.1.1
 * Support exports for `compileAsSFC`
 
