@@ -6045,16 +6045,6 @@ sham-ui-templates-loader@^3.0.3:
     loader-utils "^1.1.0"
     sham-ui-templates "^3.2.4"
 
-sham-ui-templates@^3.2.3:
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-3.2.3.tgz#0b236b90e03af6188f9d0e29301f4f7e7e1b069d"
-  integrity sha512-Er8mCbc/rY6B4g65HS/Tc7gF7zPCx7+Cx95EweGe7RL84D6h+8h706jSH3lKpAfnFENrez+/13mHw1tqrg90+w==
-  dependencies:
-    "@babel/runtime" "^7.2.0"
-    asciitree "^1.0.2"
-    sham-ui "3.1.3"
-    source-map "^0.5.7"
-
 sham-ui-templates@^3.2.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-3.2.4.tgz#247b93e501ff824ad5b28d18896ae310dad50ab6"
@@ -6064,14 +6054,6 @@ sham-ui-templates@^3.2.4:
     asciitree "^1.0.2"
     sham-ui "3.2.0"
     source-map "^0.5.7"
-
-sham-ui@3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/sham-ui/-/sham-ui-3.1.3.tgz#f202e14df06546cfdb280bb7a68bd4f59674af5b"
-  integrity sha512-JqI1J8o4oDQmxa+GNP9wOwWqDmhRkAlGbw/CG0nVqsJYA5Dq5x5BI3OQXKsRiTHKi3pa779/VcOVXiR/ux1ESw==
-  dependencies:
-    "@babel/runtime" "^7.4.5"
-    nanoid "^1.3.1"
 
 sham-ui@3.2.0, sham-ui@^3.2.0:
   version "3.2.0"
