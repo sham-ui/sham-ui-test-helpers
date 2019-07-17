@@ -1,3 +1,6 @@
+### 3.1.5
+* Fix params for pretty
+
 ### 3.1.4
 * Update dependencies
 
