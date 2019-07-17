@@ -14,7 +14,9 @@ function prepareOptions( options ) {
 function toJSON( component ) {
     let html = null;
     if ( component.container !== undefined ) {
-        html = pretty( component.container.innerHTML );
+        html = pretty( component.container.innerHTML, {
+            inline: [ 'code', 'pre', 'em', 'strong', 'span' ]
+        } );
         if ( html.indexOf( '\n' ) !== -1 ) {
             html = `\n${html}\n`;
         }
