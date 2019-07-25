@@ -1,3 +1,6 @@
+### 3.2.0
+* Add `compileWith` & `compileAsSFCWith`
+
 ### 3.1.5
 * Fix params for pretty
 

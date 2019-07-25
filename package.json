@@ -1,6 +1,6 @@
 {
   "name": "sham-ui-test-helpers",
-  "version": "3.1.5",
+  "version": "3.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -114,7 +114,12 @@
         "collectCoverageFrom": [
           "src/*.js"
         ],
-        "testURL": "http://sham-ui-test-helpers.example.com"
+        "testURL": "http://sham-ui-test-helpers.example.com",
+        "testPathIgnorePatterns": [
+          "<rootDir>/node_modules/",
+          "<rootDir>/__tests__/setup-jest.js"
+        ],
+        "setupTestFrameworkScriptFile": "<rootDir>/__tests__/setup-jest.js"
       },
       {
         "runner": "jest-runner-eslint",

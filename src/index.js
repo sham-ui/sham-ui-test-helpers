@@ -1,2 +1,2 @@
 export { default } from './renderer';
-export { compileAsSFC, compile } from './inline-compilers';
+export { compileAsSFC, compile, compileWith, compileAsSFCWith } from './inline-compilers';

@@ -38,6 +38,48 @@ Object {
 }
 `;
 
+exports[`inline with mappings 1`] = `
+Object {
+  "Constructor": "dummy",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "content from options",
+    "title": "title from options",
+    "types": Array [],
+  },
+  "html": "
+<h1>title from options</h1>
+<!--TitleComponent-->
+<main>
+  <div>title from options</div>
+  <div>content from options</div>
+</main>
+",
+}
+`;
+
+exports[`inline with mappings 2`] = `
+Object {
+  "Constructor": "dummy",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "new content",
+    "title": "new title",
+    "types": Array [],
+  },
+  "html": "
+<h1>new title</h1>
+<!--TitleComponent-->
+<main>
+  <div>new title</div>
+  <div>new content</div>
+</main>
+",
+}
+`;
+
 exports[`sfc 1`] = `
 Object {
   "Constructor": "_class2",
@@ -66,6 +108,44 @@ Object {
     "types": Array [],
   },
   "html": "
+<div>new sfc title</div>
+<div>new sfc content</div>
+",
+}
+`;
+
+exports[`sfc with mappings 1`] = `
+Object {
+  "Constructor": "_class2",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "content from sfc options",
+    "title": "title from sfc options",
+    "types": Array [],
+  },
+  "html": "
+<header>title from sfc options</header>
+<!--Header-->
+<div>title from sfc options</div>
+<div>content from sfc options</div>
+",
+}
+`;
+
+exports[`sfc with mappings 2`] = `
+Object {
+  "Constructor": "_class2",
+  "Options": Object {
+    "ID": "component",
+    "containerSelector": "body",
+    "content": "new sfc content",
+    "title": "new sfc title",
+    "types": Array [],
+  },
+  "html": "
+<header>new sfc title</header>
+<!--Header-->
 <div>new sfc title</div>
 <div>new sfc content</div>
 ",

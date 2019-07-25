@@ -11,18 +11,22 @@ const compilerForSFC = new Compiler( {
     asModule: false
 } );
 
-function evalComponent( code ) {
-    const fn = new Function( [
-        'var module, exports, require;',
-        'require=arguments[0];',
-        'module=exports=arguments[1];',
+function evalComponent( code, mappings = {} ) {
+    const body = [
+        'var module=exports;',
         code,
         'return module.exports || exports.default;'
-    ].join( '\n' ) );
-    return fn( require, {} );
+    ].join( '\n' );
+    const fn = new Function(
+        'require',
+        'exports',
+        ...Object.keys( mappings ),
+        body
+    );
+    return fn( require, {}, ...Object.values( mappings ) );
 }
 
-export function compile( strings ) {
+function _compile( strings ) {
     const node = sourceNode( '' );
     node.add(
         compiler.compile(
@@ -30,10 +34,10 @@ export function compile( strings ) {
             strings.join( '\n' ).trim()
         )
     );
-    return evalComponent( node.toString() );
+    return node.toString();
 }
 
-export function compileAsSFC( strings ) {
+function _compileAsSFC( strings ) {
     const node = sourceNode( '' );
     node.add(
         compilerForSFC.compile(
@@ -43,5 +47,32 @@ export function compileAsSFC( strings ) {
     );
     const { config } = findBabelConfig.sync( process.cwd() );
     const { code } = transformSync( node.toString(), config );
-    return evalComponent( code );
+    return code;
 }
+
+export function compileAsSFC( strings ) {
+    return evalComponent( _compileAsSFC( strings ) );
+}
+
+export function compile( strings ) {
+    return evalComponent( _compile( strings ) );
+}
+
+export function compileWith( mapping ) {
+    return function( strings ) {
+        return evalComponent(
+            _compile( strings ),
+            mapping
+        );
+    };
+}
+
+export function compileAsSFCWith( mapping ) {
+    return function( strings ) {
+        return evalComponent(
+            _compileAsSFC( strings ),
+            mapping
+        );
+    };
+}
+
