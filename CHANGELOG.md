@@ -1,3 +1,6 @@
+### 3.2.1
+* Update deps
+
 ### 3.2.0
 * Add `compileWith` & `compileAsSFCWith`
 
