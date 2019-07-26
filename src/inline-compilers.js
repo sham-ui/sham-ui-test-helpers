@@ -37,6 +37,18 @@ function _compile( strings ) {
     return node.toString();
 }
 
+export function compile( arg ) {
+    if ( !Array.isArray( arg ) ) {
+        return function( strings ) {
+            return evalComponent(
+                _compile( strings ),
+                arg
+            );
+        };
+    }
+    return evalComponent( _compile( arg ) );
+}
+
 function _compileAsSFC( strings ) {
     const node = sourceNode( '' );
     node.add(
@@ -50,29 +62,14 @@ function _compileAsSFC( strings ) {
     return code;
 }
 
-export function compileAsSFC( strings ) {
-    return evalComponent( _compileAsSFC( strings ) );
+export function compileAsSFC( arg ) {
+    if ( !Array.isArray( arg ) ) {
+        return function( strings ) {
+            return evalComponent(
+                _compileAsSFC( strings ),
+                arg
+            );
+        };
+    }
+    return evalComponent( _compileAsSFC( arg ) );
 }
-
-export function compile( strings ) {
-    return evalComponent( _compile( strings ) );
-}
-
-export function compileWith( mapping ) {
-    return function( strings ) {
-        return evalComponent(
-            _compile( strings ),
-            mapping
-        );
-    };
-}
-
-export function compileAsSFCWith( mapping ) {
-    return function( strings ) {
-        return evalComponent(
-            _compileAsSFC( strings ),
-            mapping
-        );
-    };
-}
-

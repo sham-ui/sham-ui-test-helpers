@@ -1,3 +1,6 @@
+### 3.3.0
+* Merge `compileWith` to `compile` & `compileAsSFCWith` to `compileAsSFC`
+
 ### 3.2.1
 * Update deps
 

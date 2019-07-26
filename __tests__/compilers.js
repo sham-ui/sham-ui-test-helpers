@@ -1,5 +1,5 @@
 import { Component } from 'sham-ui';
-import renderer, { compile, compileAsSFC, compileWith, compileAsSFCWith } from '../src';
+import renderer, { compile, compileAsSFC } from '../src';
 
 it( 'inline', () => {
     const meta = renderer(
@@ -30,7 +30,7 @@ it( 'inline', () => {
 
 it( 'inline with mappings', () => {
     const meta = renderer(
-        compileWith( {
+        compile( {
             TitleComponent: compile`<h1>{{text}}</h1>`
         } )`
             <TitleComponent text={{title}}/>
@@ -96,7 +96,7 @@ it( 'sfc', () => {
 
 it( 'sfc with mappings', () => {
     const meta = renderer(
-        compileAsSFCWith( {
+        compileAsSFC( {
             Header: compile`<header>{{text}}</header>`
         } )`
             <template>
