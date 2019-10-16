@@ -48,7 +48,7 @@
     "sham-ui-templates-loader": "^3.0.4",
     "style-loader": "~0.23.1",
     "webpack": "~4.17.1",
-    "webpack-cli": "^3.1.0",
+    "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "~3.7.0",
     "webpack-hot-middleware": "^2.22.3"
   },
