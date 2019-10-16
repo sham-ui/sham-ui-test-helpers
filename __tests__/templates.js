@@ -10,7 +10,6 @@ it( 'renders correctly', () => {
     } );
     expect( meta.component.ID ).toEqual( 'component' );
     expect( meta.component.container.innerHTML ).toEqual( '<a href="127.0.0.1">Link label</a>' );
-    expect( meta.rendered ).toEqual( [ 'component' ] );
 } );
 
 it( 'snapshot correctly', () => {

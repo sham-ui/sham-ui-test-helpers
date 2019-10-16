@@ -17,7 +17,6 @@ it( 'renders correctly', () => {
 
     expect( meta.component.ID ).toEqual( 'component' );
     expect( meta.component.container.innerHTML ).toEqual( 'Foo' );
-    expect( meta.rendered ).toEqual( [ 'component' ] );
 } );
 
 it( 'snapshot correctly', () => {
@@ -27,6 +26,5 @@ it( 'snapshot correctly', () => {
 
 it( 'options', () => {
     const { component } = renderer( Label );
-    expect( component.options.types ).toEqual( [] );
     expect( component.options.text ).toEqual( 'Foo' );
 } );

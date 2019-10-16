@@ -5,9 +5,7 @@ Object {
   "Constructor": "Dummy",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "label": "Link label",
-    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "
@@ -25,9 +23,7 @@ Object {
   "Constructor": "Dummy",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "label": "Link label",
-    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "
@@ -45,10 +41,8 @@ Object {
   "Constructor": "Panel",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "Default content",
     "title": "Default title",
-    "types": Array [],
   },
   "html": "
 <div>Default title</div>
@@ -62,10 +56,8 @@ Object {
   "Constructor": "Panel",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "Custom content",
     "title": "Custom title",
-    "types": Array [],
   },
   "html": "
 <div>Custom title</div>
@@ -79,9 +71,7 @@ Object {
   "Constructor": "Link",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "label": "Link label",
-    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "<a href=\\"127.0.0.1\\">Link label</a>",
@@ -93,9 +83,7 @@ Object {
   "Constructor": "Link",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "label": "Link label",
-    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "<a href=\\"127.0.0.1\\">Link label</a>",
@@ -107,9 +95,7 @@ Object {
   "Constructor": "Link",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "label": "Updated link label",
-    "types": Array [],
     "url": "127.0.0.1",
   },
   "html": "<a href=\\"127.0.0.1\\">Updated link label</a>",

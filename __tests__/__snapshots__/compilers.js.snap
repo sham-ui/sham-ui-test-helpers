@@ -5,10 +5,8 @@ Object {
   "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "content from options",
     "title": "title from options",
-    "types": Array [],
   },
   "html": "
 <main>
@@ -24,10 +22,8 @@ Object {
   "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "new content",
     "title": "new title",
-    "types": Array [],
   },
   "html": "
 <main>
@@ -43,10 +39,8 @@ Object {
   "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "content from options",
     "title": "title from options",
-    "types": Array [],
   },
   "html": "
 <h1>title from options</h1>
@@ -64,10 +58,8 @@ Object {
   "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "new content",
     "title": "new title",
-    "types": Array [],
   },
   "html": "
 <h1>new title</h1>
@@ -85,10 +77,8 @@ Object {
   "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "content from sfc options",
     "title": "title from sfc options",
-    "types": Array [],
   },
   "html": "
 <div>title from sfc options</div>
@@ -102,10 +92,8 @@ Object {
   "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "new sfc content",
     "title": "new sfc title",
-    "types": Array [],
   },
   "html": "
 <div>new sfc title</div>
@@ -119,10 +107,8 @@ Object {
   "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "content from sfc options",
     "title": "title from sfc options",
-    "types": Array [],
   },
   "html": "
 <header>title from sfc options</header>
@@ -138,10 +124,8 @@ Object {
   "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "content": "new sfc content",
     "title": "new sfc title",
-    "types": Array [],
   },
   "html": "
 <header>new sfc title</header>

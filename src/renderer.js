@@ -1,14 +1,18 @@
-import ShamUI, { DI } from 'sham-ui';
+import { start, DI } from 'sham-ui';
 import pretty from 'pretty';
 
 const DEFAULT_SELECTOR = 'body';
 const DEFAULT_ID = 'component';
 
 function prepareOptions( options ) {
-    return {
+    const result = {
         ...Object.getPrototypeOf( options ),
         ...options
     };
+    if ( result.container ) {
+        delete result.container;
+    }
+    return result;
 }
 
 function toJSON( component ) {
@@ -32,31 +36,20 @@ export default function renderer(
     componentClass,
     componentOptions = {}
 ) {
-    const rendered = [];
-
     const options = {
         ID: DEFAULT_ID,
-        containerSelector: DEFAULT_SELECTOR,
+        container: document.querySelector( DEFAULT_SELECTOR ),
         ...componentOptions
     };
 
     DI.resolve( 'sham-ui:store' ).clear();
-    document.querySelector( options.containerSelector ).innerHTML = '';
+    options.container.innerHTML = '';
 
-    let component;
-    DI.bind( 'component-binder', () => {
-        component = new componentClass( options );
-    } );
-
-    const UI = new ShamUI();
-    UI.render.on( 'RenderComplete', ( renderedComponents ) => {
-        rendered.push( ...renderedComponents );
-    } );
-    UI.render.ALL();
+    const component = new componentClass( options );
+    start();
 
     return {
         component,
-        rendered,
         toJSON() {
             return toJSON( component );
         }

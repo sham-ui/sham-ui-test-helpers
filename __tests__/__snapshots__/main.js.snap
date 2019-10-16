@@ -5,9 +5,7 @@ Object {
   "Constructor": "Label",
   "Options": Object {
     "ID": "component",
-    "containerSelector": "body",
     "text": "Foo",
-    "types": Array [],
   },
   "html": "Foo",
 }

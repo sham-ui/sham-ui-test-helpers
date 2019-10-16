@@ -3,12 +3,14 @@ import { sourceNode } from 'sham-ui-templates/lib/compiler/sourceNode';
 import { transformSync } from '@babel/core';
 import findBabelConfig from 'find-babel-config';
 const compiler = new Compiler( {
-    asModule: true
+    asModule: true,
+    removeDataTest: false
 } );
 
 const compilerForSFC = new Compiler( {
     asSingleFileComponent: true,
-    asModule: false
+    asModule: false,
+    removeDataTest: false
 } );
 
 function evalComponent( code, mappings = {} ) {
