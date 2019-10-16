@@ -50,7 +50,7 @@
     "webpack": "~4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-middleware": "~3.7.0",
-    "webpack-hot-middleware": "^2.22.3"
+    "webpack-hot-middleware": "^2.25.0"
   },
   "dependencies": {
     "babel-core": "^7.0.0-bridge.0",
