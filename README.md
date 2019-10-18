@@ -19,6 +19,12 @@
 -   [ToJSON](#tojson)
 -   [RenderResultSnapshot](#renderresultsnapshot)
     -   [Properties](#properties-1)
+-   [compile](#compile)
+    -   [Parameters](#parameters-1)
+    -   [Examples](#examples-1)
+-   [compileAsSFC](#compileassfc)
+    -   [Parameters](#parameters-2)
+    -   [Examples](#examples-2)
 
 #### renderer
 
@@ -91,138 +97,170 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 -   `Constructor` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of Component
 -   `Options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Component options
 
-### Usage
+#### compile
 
-```js
+Compile component. Can call with mapping object
+
+##### Parameters
+
+-   `arg` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+
+##### Examples
+
+```javascript
+import renderer, { compile } from 'sham-ui-test-helpers';
 it( 'inline', () => {
-    const meta = renderer(
-        compile`
-            <main>
-                <div>
-                    {{title}}
-                </div>
-                <div>
-                    {{content}}
-                </div>
-            </main>
-            
-        `,
-        {
-            title: 'title from options',
-            content: 'content from options'
-        }
-    );
-    expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
-    meta.component.update( {
-        title: 'new title',
-        content: 'new content'
-    } );
-    expect( meta.toJSON() ).toMatchSnapshot();
-} );
+  const meta = renderer(
+      compile`
+          <main>
+              <div>
+                  {{title}}
+              </div>
+              <div>
+                  {{content}}
+              </div>
+          </main>
 
-it( 'inline with mappings', () => {
-    const meta = renderer(
-        compile( {
-            TitleComponent: compile`<h1>{{text}}</h1>`
-        } )`
-            <TitleComponent text={{title}}/>
-
-            <main>
-                <div>
-                    {{title}}
-                </div>
-                <div>
-                    {{content}}
-                </div>
-            </main>
-            
-        `,
-        {
-            title: 'title from options',
-            content: 'content from options'
-        }
-    );
-    expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
-    meta.component.update( {
-        title: 'new title',
-        content: 'new content'
-    } );
-    expect( meta.toJSON() ).toMatchSnapshot();
-} );
-
-it( 'sfc', () => {
-    const meta = renderer(
-        compileAsSFC`
-            <template>
-                <div>
-                    {{title}}
-                </div>
-                <div>
-                    {{content}}
-                </div>
-            </template>
-            
-            <script>
-                import { options } from 'sham-ui';
-                
-                class dummy extends Template {
-                    @options title = 'Default title';
-                    @options content = 'Default content';
-                }
-            </script>
-        `,
-        {
-            title: 'title from options',
-            content: 'content from options'
-        }
-    );
-    expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
-    meta.component.update( {
-        title: 'new title',
-        content: 'new content'
-    } );
-    expect( meta.toJSON() ).toMatchSnapshot();
-} );
-
-it( 'sfc with mappings', () => {
-    const meta = renderer(
-        compileAsSFC( {
-            Header: compile`<header>{{text}}</header>`
-        } )`
-            <template>
-                <Header text={{title}}/>
-            
-                <div>
-                    {{title}}
-                </div>
-                <div>
-                    {{content}}
-                </div>
-            </template>
-            
-            <script>
-                import { options } from 'sham-ui';
-                
-                export default class extends Template {
-                    @options title = 'Default sfc title';
-                    @options content = 'Default sfc content';
-                }
-            </script>
-        `,
-        {
-            title: 'title from sfc options',
-            content: 'content from sfc options'
-        }
-    );
-    expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
-    meta.component.update( {
-        title: 'new sfc title',
-        content: 'new sfc content'
-    } );
-    expect( meta.toJSON() ).toMatchSnapshot();
+      `,
+      {
+          title: 'title from options',
+          content: 'content from options'
+      }
+  );
+  expect( meta.toJSON() ).toMatchSnapshot();
+  expect( meta.component ).toBeInstanceOf( Component );
+  meta.component.update( {
+      title: 'new title',
+      content: 'new content'
+  } );
+  expect( meta.toJSON() ).toMatchSnapshot();
 } );
 ```
+
+```javascript
+import renderer, { compile } from 'sham-ui-test-helpers';
+it( 'inline with mappings', () => {
+  const meta = renderer(
+      compile( {
+          TitleComponent: compile`<h1>{{text}}</h1>`
+      } )`
+          <TitleComponent text={{title}}/>
+
+          <main>
+              <div>
+                  {{title}}
+              </div>
+              <div>
+                  {{content}}
+              </div>
+          </main>
+
+      `,
+      {
+          title: 'title from options',
+          content: 'content from options'
+      }
+  );
+  expect( meta.toJSON() ).toMatchSnapshot();
+  expect( meta.component ).toBeInstanceOf( Component );
+  meta.component.update( {
+      title: 'new title',
+      content: 'new content'
+  } );
+  expect( meta.toJSON() ).toMatchSnapshot();
+} );
+```
+
+Returns **([Component](#component) \| [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function))** 
+
+#### compileAsSFC
+
+Compile as single file component (SFС). Also can call with mapping object
+
+##### Parameters
+
+-   `arg` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))** 
+
+##### Examples
+
+```javascript
+import renderer, { compileAsSFC } from 'sham-ui-test-helpers';
+it( 'sfc', () => {
+  const meta = renderer(
+      compileAsSFC`
+          <template>
+              <div>
+                  {{title}}
+              </div>
+              <div>
+                  {{content}}
+              </div>
+          </template>
+
+          <script>
+              import { options } from 'sham-ui';
+
+              class dummy extends Template {
+                  @options title = 'Default title';
+                  @options content = 'Default content';
+              }
+          </script>
+      `,
+      {
+          title: 'title from options',
+          content: 'content from options'
+      }
+  );
+  expect( meta.toJSON() ).toMatchSnapshot();
+  expect( meta.component ).toBeInstanceOf( Component );
+  meta.component.update( {
+      title: 'new title',
+      content: 'new content'
+  } );
+  expect( meta.toJSON() ).toMatchSnapshot();
+} );
+```
+
+```javascript
+import renderer, { compileAsSFC } from 'sham-ui-test-helpers';
+it( 'sfc with mappings', () => {
+  const meta = renderer(
+      compileAsSFC( {
+          Header: compile`<header>{{text}}</header>`
+      } )`
+          <template>
+              <Header text={{title}}/>
+
+              <div>
+                  {{title}}
+              </div>
+              <div>
+                  {{content}}
+              </div>
+          </template>
+
+          <script>
+              import { options } from 'sham-ui';
+
+              export default class extends Template {
+                  @options title = 'Default sfc title';
+                  @options content = 'Default sfc content';
+              }
+          </script>
+      `,
+      {
+          title: 'title from sfc options',
+          content: 'content from sfc options'
+      }
+  );
+  expect( meta.toJSON() ).toMatchSnapshot();
+  expect( meta.component ).toBeInstanceOf( Component );
+  meta.component.update( {
+      title: 'new sfc title',
+      content: 'new sfc content'
+  } );
+  expect( meta.toJSON() ).toMatchSnapshot();
+} );
+```
+
+Returns **([Component](#component) \| [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function))** 

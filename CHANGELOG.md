@@ -1,6 +1,7 @@
 ### master
 * Update dependencies
 * Update `renderer` & `inline-compilers` for `sham-ui^4.0.0` 
+* Add documentation
 
 ### 3.3.0
 * Merge `compileWith` to `compile` & `compileAsSFCWith` to `compileAsSFC`
