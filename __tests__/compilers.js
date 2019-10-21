@@ -132,3 +132,46 @@ it( 'sfc with mappings', () => {
     } );
     expect( meta.toJSON() ).toMatchSnapshot();
 } );
+
+
+it( 'inline compiler don\'t remove data-test attributes', () => {
+    const { component } = renderer(
+        compile`
+            <div data-test-label={{ref}}>
+                {{title}}
+            </div>
+        `,
+        {
+            ref: 'ref-name',
+            title: 'Content'
+        }
+    );
+    expect( component.container.querySelector( '[data-test-label="ref-name"]' ).textContent ).toBe(
+        'Content'
+    );
+} );
+
+
+it( 'sfc compiler don\'t remove data-test attributes', () => {
+    const { component } = renderer(
+        compileAsSFC`
+            <template>
+                <div data-test-label={{ref}}>
+                    {{title}}
+                </div>
+            </template>
+            <script>
+                import { options } from 'sham-ui';
+                
+                export default class extends Template {
+                    @options ref = 'ref-name';
+                    @options title = 'Content';
+                }
+            </script>
+            
+        `
+    );
+    expect( component.container.querySelector( '[data-test-label="ref-name"]' ).textContent ).toBe(
+        'Content'
+    );
+} );
