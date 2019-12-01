@@ -38,7 +38,7 @@
     "babel-eslint": "^10.0.3",
     "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.0",
-    "babel-plugin-macros": "^2.6.1",
+    "babel-plugin-macros": "^2.7.1",
     "core-js": "^3.3.2",
     "css-loader": "~3.2.0",
     "documentation": "^12.1.2",
