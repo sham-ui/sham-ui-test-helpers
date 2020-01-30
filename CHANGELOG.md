@@ -1,3 +1,6 @@
+### 4.0.1
+* Update dependencies
+
 ### 4.0.0
 * Update dependencies
 * Update `renderer` & `inline-compilers` for `sham-ui^4.0.0` 
