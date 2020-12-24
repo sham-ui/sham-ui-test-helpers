@@ -122,7 +122,7 @@ function _compileAsSFC( strings ) {
     const node = sourceNode( '' );
     node.add(
         compilerForSFC.compile(
-            'dummy.shc',
+            'dummy.sfc',
             strings.join( '\n' ).trim()
         )
     );
