@@ -7811,12 +7811,12 @@ shallow-clone@^1.0.0:
     kind-of "^5.0.0"
     mixin-object "^2.0.1"
 
-sham-ui-jest-preprocessor@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-4.1.2.tgz#8217d8822da3298cefc966feff3e3364fb6a37bf"
-  integrity sha512-LxBrNajRKyf4YE1qq5VufB5SbFXY0c7YcpCb0K7W3qF/lFLzCmoMKjA7cBRvmyfX2UMjWN8xK1AcnWwLpIKigg==
+sham-ui-jest-preprocessor@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/sham-ui-jest-preprocessor/-/sham-ui-jest-preprocessor-4.1.3.tgz#75f2b709ee2bb3cf75b95faa01073e362a88d388"
+  integrity sha512-6UHKmXiAKNz0PZJY2Vx8kuR/HVA4ynMJ5jy8MkGrJ7tIVzjJ6V1uJNZQWaWqfAHnXcra/qE/pjc1zgmFH9Yjlg==
   dependencies:
-    sham-ui-templates "^4.2.2"
+    sham-ui-templates "^4.2.3"
     source-map "^0.5.6"
 
 sham-ui-macro@^1.1.0:
@@ -7828,18 +7828,18 @@ sham-ui-macro@^1.1.0:
     babel-macros "^1.0.2"
     babel-types "^6.26.0"
 
-sham-ui-templates-loader@^4.1.2:
-  version "4.1.2"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates-loader/-/sham-ui-templates-loader-4.1.2.tgz#aff959f288f0391726db96be881dcff496a03f90"
-  integrity sha512-Ad1RznedqDsz/XI4flg2jvfy0IWDdzTOyueGfXr15TSuOITC6lK3t7c2Lz2soFoWAERudq/3HzJFbcy/X5r8Dg==
+sham-ui-templates-loader@^4.1.3:
+  version "4.1.3"
+  resolved "https://registry.yarnpkg.com/sham-ui-templates-loader/-/sham-ui-templates-loader-4.1.3.tgz#8fbcb341f5ebc9d963b7e712d1fa9be2b58c27f0"
+  integrity sha512-yGQx7hp7zV04BDgeqgx8vuv9HhsTvb/nbM04MjaiMgCK3JsgiBLqo6mWynpBMrXh232WzXgFDSK8+Qbwum5y/A==
   dependencies:
     loader-utils "^1.1.0"
-    sham-ui-templates "^4.2.2"
+    sham-ui-templates "^4.2.3"
 
-sham-ui-templates@^4.2.2:
-  version "4.2.2"
-  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-4.2.2.tgz#a73a49845c1a695c79e6bd606c9bc8b6dfaea018"
-  integrity sha512-Sc5wtWKQYJFVBK41FHfiBwuZ6WXcewFUgnHS4aKtCcaJSOjFt/WVaR4Xr7qg8Syhyp1URdyZOup+Uy68dgTuQA==
+sham-ui-templates@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/sham-ui-templates/-/sham-ui-templates-4.2.3.tgz#bb665f63b527b7cfc0061242f0d2f4f96365d017"
+  integrity sha512-Q7eevLhY/JUbUuXSef8W5p6nI2gXhU0Re1R6zGewYqxwRYlFWTceaXU+8uyQyLmN+voweGZ3RydYE6zJM2AwUQ==
   dependencies:
     asciitree "^1.0.2"
     sham-ui "4.1.0"
