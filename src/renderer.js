@@ -1,4 +1,4 @@
-import { start, DI } from 'sham-ui';
+import { start, createDI } from 'sham-ui';
 import pretty from 'pretty';
 
 const DEFAULT_SELECTOR = 'body';
@@ -17,6 +17,9 @@ function prepareOptions( options ) {
     };
     if ( result.container ) {
         delete result.container;
+    }
+    if ( result.DI ) {
+        delete result.DI;
     }
     return result;
 }
@@ -64,7 +67,7 @@ function toJSON( component ) {
  * it( 'snapshot correctly', () => {
  *     const meta = renderer( Label );
  *
- *     expect( tree ).toMatchSnapshot()
+ *     expect( meta.toJSON() ).toMatchSnapshot()
  * } );
  *
  * @param {Class<Component>} componentClass Component class for rendering
@@ -75,19 +78,25 @@ export default function renderer(
     componentClass,
     componentOptions = {}
 ) {
+    const DI = 'DI' in componentOptions ?
+        componentOptions.DI :
+        createDI()
+    ;
     const options = {
+        DI,
         ID: DEFAULT_ID,
         container: document.querySelector( DEFAULT_SELECTOR ),
         ...componentOptions
     };
 
-    DI.resolve( 'sham-ui:store' ).clear();
+    DI.resolve( 'sham-ui:store' ).byId.clear();
     options.container.innerHTML = '';
 
     const component = new componentClass( options );
-    start();
+    start( DI );
 
     return {
+        DI,
         component,
         toJSON() {
             return toJSON( component );
@@ -102,9 +111,17 @@ export default function renderer(
  */
 
 /**
+ * sham-ui di container
+ * @external DI
+ * @see https://github.com/sham-ui/sham-ui#DI
+ */
+
+
+/**
  * Result of renderer
  * @typedef {Object} RenderResult
  * @property {Component} component Rendered component instance
+ * @property {DI} DI Container, used for render
  * @property {ToJSON} toJSON Dump to JSON for jest's snapshot testing
  */
 

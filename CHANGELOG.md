@@ -1,3 +1,10 @@
+### 5.0.0-alpha.0
+* Process code with babel for inline compiler `.sht` components
+* Fix error in docs
+* Update code for new version sham-ui
+* Add hack for `require`
+* Update dependencies
+
 ### 4.1.3
 * Update dependencies
 

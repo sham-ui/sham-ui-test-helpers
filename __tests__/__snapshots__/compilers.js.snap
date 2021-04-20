@@ -44,7 +44,7 @@ Object {
   },
   "html": "
 <h1>title from options</h1>
-<!--TitleComponent-->
+<!--0-->
 <main>
   <div>title from options</div>
   <div>content from options</div>
@@ -63,7 +63,7 @@ Object {
   },
   "html": "
 <h1>new title</h1>
-<!--TitleComponent-->
+<!--0-->
 <main>
   <div>new title</div>
   <div>new content</div>
@@ -112,7 +112,7 @@ Object {
   },
   "html": "
 <header>title from sfc options</header>
-<!--Header-->
+<!--0-->
 <div>title from sfc options</div>
 <div>content from sfc options</div>
 ",
@@ -129,7 +129,7 @@ Object {
   },
   "html": "
 <header>new sfc title</header>
-<!--Header-->
+<!--0-->
 <div>new sfc title</div>
 <div>new sfc content</div>
 ",

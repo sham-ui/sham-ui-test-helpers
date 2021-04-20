@@ -2,6 +2,7 @@ import { Compiler } from 'sham-ui-templates';
 import { sourceNode } from 'sham-ui-templates/lib/compiler/sourceNode';
 import { transformSync } from '@babel/core';
 import findBabelConfig from 'find-babel-config';
+
 const compiler = new Compiler( {
     asModule: true,
     removeDataTest: false
@@ -12,6 +13,9 @@ const compilerForSFC = new Compiler( {
     asModule: false,
     removeDataTest: false
 } );
+
+// It's hack for don't replace require with webpack require
+const requireModule = eval( 'require' );
 
 function evalComponent( code, mappings = {} ) {
     const body = [
@@ -25,7 +29,7 @@ function evalComponent( code, mappings = {} ) {
         ...Object.keys( mappings ),
         body
     );
-    return fn( require, {}, ...Object.values( mappings ) );
+    return fn( requireModule, {}, ...Object.values( mappings ) );
 }
 
 function _compile( strings ) {
@@ -36,7 +40,9 @@ function _compile( strings ) {
             strings.join( '\n' ).trim()
         )
     );
-    return node.toString();
+    const { config } = findBabelConfig.sync( process.cwd() );
+    const { code } = transformSync( node.toString(), config );
+    return code;
 }
 
 /**

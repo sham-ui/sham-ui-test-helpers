@@ -14,6 +14,7 @@
     -   [Parameters](#parameters)
     -   [Examples](#examples)
 -   [Component](#component)
+-   [DI](#di)
 -   [RenderResult](#renderresult)
     -   [Properties](#properties)
 -   [ToJSON](#tojson)
@@ -56,7 +57,7 @@ import renderer from 'sham-ui-test-helpers';
 it( 'snapshot correctly', () => {
     const meta = renderer( Label );
 
-    expect( tree ).toMatchSnapshot()
+    expect( meta.toJSON() ).toMatchSnapshot()
 } );
 ```
 
@@ -64,9 +65,17 @@ Returns **[RenderResult](#renderresult)**
 
 #### Component
 
--   **See: <https://github.com/sham-ui/sham-ui#component>**
+-   **See: <https://github.com/sham-ui/sham-ui#component>
+    **
 
 sham-ui component
+
+#### DI
+
+-   **See: <https://github.com/sham-ui/sham-ui#DI>
+    **
+
+sham-ui di container
 
 #### RenderResult
 
@@ -77,6 +86,7 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 ##### Properties
 
 -   `component` **[Component](#component)** Rendered component instance
+-   `DI` **[DI](#di)** Container, used for render
 -   `toJSON` **[ToJSON](#tojson)** Dump to JSON for jest's snapshot testing
 
 #### ToJSON

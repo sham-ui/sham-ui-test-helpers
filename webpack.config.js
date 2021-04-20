@@ -7,14 +7,15 @@ const plugins = [
 module.exports = {
     entry: './src/index.js',
     target: 'node',
-    externals: {
-        'sham-ui-templates': 'sham-ui-templates',
-        'sham-ui-templates/lib/compiler/sourceNode': 'sham-ui-templates/lib/compiler/sourceNode',
-        '@babel/core': '@babel/core',
-        'fs': 'fs',
-        'sham-ui': 'sham-ui',
-        'find-babel-config': 'find-babel-config'
-    },
+    externals: [
+        'sham-ui-templates',
+        'sham-ui-templates/lib/compiler/sourceNode',
+        '@babel/core',
+        'fs',
+        'vm',
+        'sham-ui',
+        'find-babel-config'
+    ],
     output: {
         path: __dirname,
         filename: 'index.js',
