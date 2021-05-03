@@ -154,12 +154,15 @@ function _compileAsSFC( strings ) {
  *           </template>
  *
  *           <script>
- *               import { options } from 'sham-ui';
- *
- *               class dummy extends Template {
- *                   \@options title = 'Default title';
- *                   \@options content = 'Default content';
+ *               function dummy( options ) {
+ *                   const title = ref();
+ *                   const content = ref();
+ *                   options( {
+ *                       [ title ]: 'Default title',
+ *                       [ content ]: 'Default content'
+ *                   } )
  *               }
+ *               export default( Template, dummy );
  *           </script>
  *       `,
  *       {
@@ -195,12 +198,15 @@ function _compileAsSFC( strings ) {
  *           </template>
  *
  *           <script>
- *               import { options } from 'sham-ui';
- *
- *               export default class extends Template {
- *                   \@options title = 'Default sfc title';
- *                   \@options content = 'Default sfc content';
+ *               function dummy( options ) {
+ *                   const title = ref();
+ *                   const content = ref();
+ *                   options( {
+ *                       [ title ]: 'Default title',
+ *                       [ content ]: 'Default content'
+ *                   } )
  *               }
+ *               export default( Template, dummy );
  *           </script>
  *       `,
  *       {

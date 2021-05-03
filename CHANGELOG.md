@@ -1,3 +1,7 @@
+### 5.0.0-alpha.1
+* Update dependencies
+* Remove `Component` from `toJSON` response
+
 ### 5.0.0-alpha.0
 * Process code with babel for inline compiler `.sht` components
 * Fix error in docs

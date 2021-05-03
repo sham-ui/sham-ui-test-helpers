@@ -42,7 +42,6 @@ function toJSON( component ) {
     }
     return {
         html,
-        Constructor: component.constructor.name,
         Options: prepareOptions( component.options )
     };
 }
@@ -135,6 +134,5 @@ export default function renderer(
 /**
  * @typedef {Object} RenderResultSnapshot
  * @property {string} html Rendered html
- * @property {string} Constructor Name of Component
  * @property {Object} Options Component options
  */

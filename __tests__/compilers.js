@@ -1,4 +1,3 @@
-import { Component } from 'sham-ui';
 import renderer, { compile, compileAsSFC } from '../src';
 
 it( 'inline', () => {
@@ -20,7 +19,6 @@ it( 'inline', () => {
         }
     );
     expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
     meta.component.update( {
         title: 'new title',
         content: 'new content'
@@ -51,7 +49,6 @@ it( 'inline with mappings', () => {
         }
     );
     expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
     meta.component.update( {
         title: 'new title',
         content: 'new content'
@@ -72,12 +69,15 @@ it( 'sfc', () => {
             </template>
             
             <script>
-                import { options } from 'sham-ui';
-                
-                export default class extends Template {
-                    @options title = 'Default sfc title';
-                    @options content = 'Default sfc content';
-                }
+                export default Component( Template, function( options ) {
+                    const title = ref();
+                    const content = ref();
+                    
+                    options( {
+                        [ title ]: 'Default sfc title',
+                        [ content ]: 'Default sfc content'
+                    } )
+                } );
             </script>
         `,
         {
@@ -86,7 +86,6 @@ it( 'sfc', () => {
         }
     );
     expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
     meta.component.update( {
         title: 'new sfc title',
         content: 'new sfc content'
@@ -111,12 +110,15 @@ it( 'sfc with mappings', () => {
             </template>
             
             <script>
-                import { options } from 'sham-ui';
-                
-                export default class extends Template {
-                    @options title = 'Default sfc title';
-                    @options content = 'Default sfc content';
-                }
+                export default Component( Template, function( options ) {
+                    const title = ref();
+                    const content = ref();
+                    
+                    options( {
+                        [ title ]: 'Default sfc title',
+                        [ content ]: 'Default sfc content'
+                    } )
+                } );
             </script>
         `,
         {
@@ -125,7 +127,6 @@ it( 'sfc with mappings', () => {
         }
     );
     expect( meta.toJSON() ).toMatchSnapshot();
-    expect( meta.component ).toBeInstanceOf( Component );
     meta.component.update( {
         title: 'new sfc title',
         content: 'new sfc content'
@@ -137,12 +138,12 @@ it( 'sfc with mappings', () => {
 it( 'inline compiler don\'t remove data-test attributes', () => {
     const { component } = renderer(
         compile`
-            <div data-test-label={{ref}}>
+            <div data-test-label={{elemRef}}>
                 {{title}}
             </div>
         `,
         {
-            ref: 'ref-name',
+            elemRef: 'ref-name',
             title: 'Content'
         }
     );
@@ -156,17 +157,19 @@ it( 'sfc compiler don\'t remove data-test attributes', () => {
     const { component } = renderer(
         compileAsSFC`
             <template>
-                <div data-test-label={{ref}}>
+                <div data-test-label={{elemRef}}>
                     {{title}}
                 </div>
             </template>
             <script>
-                import { options } from 'sham-ui';
-                
-                export default class extends Template {
-                    @options ref = 'ref-name';
-                    @options title = 'Content';
-                }
+                export default Component( Template, function( options ) {
+                    const elemRef = ref();
+                    const title = ref();
+                    options( {
+                        [ elemRef ]: 'ref-name',
+                        [ title ]: 'Content',
+                    } )
+                } );
             </script>
             
         `

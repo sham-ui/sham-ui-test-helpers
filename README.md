@@ -104,7 +104,6 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 ##### Properties
 
 -   `html` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Rendered html
--   `Constructor` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Name of Component
 -   `Options` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Component options
 
 #### compile
@@ -208,12 +207,15 @@ it( 'sfc', () => {
           </template>
 
           <script>
-              import { options } from 'sham-ui';
-
-              class dummy extends Template {
-                  @options title = 'Default title';
-                  @options content = 'Default content';
+              function dummy( options ) {
+                  const title = ref();
+                  const content = ref();
+                  options( {
+                      [ title ]: 'Default title',
+                      [ content ]: 'Default content'
+                  } )
               }
+              export default( Template, dummy );
           </script>
       `,
       {
@@ -250,12 +252,15 @@ it( 'sfc with mappings', () => {
           </template>
 
           <script>
-              import { options } from 'sham-ui';
-
-              export default class extends Template {
-                  @options title = 'Default sfc title';
-                  @options content = 'Default sfc content';
+              function dummy( options ) {
+                  const title = ref();
+                  const content = ref();
+                  options( {
+                      [ title ]: 'Default title',
+                      [ content ]: 'Default content'
+                  } )
               }
+              export default( Template, dummy );
           </script>
       `,
       {

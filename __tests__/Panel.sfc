@@ -8,13 +8,15 @@
 </template>
 
 <script>
-    import { mergeWithTemplate, options } from 'sham-ui-macro/babel.macro';
+    function Panel( options ) {
+        const title = ref();
+        const content = ref();
 
-    @mergeWithTemplate
-    class Panel extends Template {
-        @options title = 'Default title';
-        @options content = 'Default content';
+        options( {
+            [ title ]: 'Default title',
+            [ content ]: 'Default content'
+        } );
     }
 
-    export default Panel;
+    export default Component( Template, Panel );
 </script>

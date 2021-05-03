@@ -2,7 +2,6 @@
 
 exports[`inline 1`] = `
 Object {
-  "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
     "content": "content from options",
@@ -19,7 +18,6 @@ Object {
 
 exports[`inline 2`] = `
 Object {
-  "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
     "content": "new content",
@@ -36,7 +34,6 @@ Object {
 
 exports[`inline with mappings 1`] = `
 Object {
-  "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
     "content": "content from options",
@@ -55,7 +52,6 @@ Object {
 
 exports[`inline with mappings 2`] = `
 Object {
-  "Constructor": "dummy",
   "Options": Object {
     "ID": "component",
     "content": "new content",
@@ -74,7 +70,6 @@ Object {
 
 exports[`sfc 1`] = `
 Object {
-  "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
     "content": "content from sfc options",
@@ -89,7 +84,6 @@ Object {
 
 exports[`sfc 2`] = `
 Object {
-  "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
     "content": "new sfc content",
@@ -104,7 +98,6 @@ Object {
 
 exports[`sfc with mappings 1`] = `
 Object {
-  "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
     "content": "content from sfc options",
@@ -121,7 +114,6 @@ Object {
 
 exports[`sfc with mappings 2`] = `
 Object {
-  "Constructor": "_class2",
   "Options": Object {
     "ID": "component",
     "content": "new sfc content",
