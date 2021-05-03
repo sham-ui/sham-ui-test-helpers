@@ -53,7 +53,7 @@
     "sham-ui-macro": "^3.0.0",
     "sham-ui-templates": "^5.0.0-alpha.1",
     "sham-ui-templates-loader": "^5.0.0-alpha.1",
-    "style-loader": "~0.23.1",
+    "style-loader": "~2.0.0",
     "webpack": "~4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-middleware": "~3.7.0",
