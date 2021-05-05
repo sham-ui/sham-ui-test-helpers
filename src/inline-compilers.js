@@ -41,7 +41,10 @@ function _compile( strings ) {
         )
     );
     const { config } = findBabelConfig.sync( process.cwd() );
-    const { code } = transformSync( node.toString(), config );
+    const { code } = transformSync( node.toString(), {
+        ...config,
+        filename: 'dummy.sht'
+    } );
     return code;
 }
 
@@ -133,7 +136,10 @@ function _compileAsSFC( strings ) {
         )
     );
     const { config } = findBabelConfig.sync( process.cwd() );
-    const { code } = transformSync( node.toString(), config );
+    const { code } = transformSync( node.toString(), {
+        ...config,
+        filename: 'dummy.sfc'
+    } );
     return code;
 }
 

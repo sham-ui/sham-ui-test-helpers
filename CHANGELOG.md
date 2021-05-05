@@ -1,3 +1,6 @@
+### 5.0.0-alpha.2
+* Set filename for inline compilers
+
 ### 5.0.0-alpha.1
 * Update dependencies
 * Remove `Component` from `toJSON` response
