@@ -10,5 +10,9 @@ Thumbs.db
 /src/
 /__tests__/
 /__mocks__/
-webpack.config.js
 .travis.yml
+.babel-plugin-macrosrc.js
+jest.config.js
+rollup.config.js
+.babelrc
+.browserslistrc

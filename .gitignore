@@ -60,3 +60,4 @@ typings/
 coverage/
 .idea/
 index.js
+index.module.js
