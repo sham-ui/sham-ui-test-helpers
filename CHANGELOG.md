@@ -1,3 +1,6 @@
+### 5.0.0-alpha.4
+* Update dependencies
+
 ### 5.0.0-alpha.3
 * Extract configs from package.json
 * Update dependencies
