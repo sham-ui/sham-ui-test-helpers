@@ -70,8 +70,8 @@ it( 'sfc', () => {
             
             <script>
                 export default Component( Template, function( options ) {
-                    const title = ref();
-                    const content = ref();
+                    const title = $();
+                    const content = $();
                     
                     options( {
                         [ title ]: 'Default sfc title',
@@ -111,8 +111,8 @@ it( 'sfc with mappings', () => {
             
             <script>
                 export default Component( Template, function( options ) {
-                    const title = ref();
-                    const content = ref();
+                    const title = $();
+                    const content = $();
                     
                     options( {
                         [ title ]: 'Default sfc title',
@@ -163,8 +163,8 @@ it( 'sfc compiler don\'t remove data-test attributes', () => {
             </template>
             <script>
                 export default Component( Template, function( options ) {
-                    const elemRef = ref();
-                    const title = ref();
+                    const elemRef = $();
+                    const title = $();
                     options( {
                         [ elemRef ]: 'ref-name',
                         [ title ]: 'Content',

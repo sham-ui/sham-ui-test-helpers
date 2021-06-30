@@ -9,8 +9,8 @@
 
 <script>
     function Panel( options ) {
-        const title = ref();
-        const content = ref();
+        const title = $();
+        const content = $();
 
         options( {
             [ title ]: 'Default title',
