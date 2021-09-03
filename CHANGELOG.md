@@ -1,3 +1,6 @@
+### 5.0.0-alpha.12
+* Update dependencies
+
 ### 5.0.0-alpha.11
 * Update dependencies
 
