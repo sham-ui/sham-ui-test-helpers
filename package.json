@@ -1,6 +1,6 @@
 {
   "name": "sham-ui-test-helpers",
-  "version": "5.0.0-alpha.12",
+  "version": "5.0.0-alpha.13",
   "description": "",
   "main": "index.js",
   "module": "index.module.js",
@@ -41,8 +41,8 @@
     "eslint-plugin-jest": "^22.17.0",
     "jest-runner-eslint": "^0.6.0",
     "rollup": "^2.47.0",
-    "sham-ui-macro": "^3.5.0",
-    "sham-ui-templates-jest-preprocessor": "^1.2.6"
+    "sham-ui-macro": "^3.6.0",
+    "sham-ui-templates-jest-preprocessor": "^1.2.7"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
@@ -51,7 +51,7 @@
     "find-babel-config": "^1.2.0",
     "jest": "^24.9.0",
     "pretty": "^2.0.0",
-    "sham-ui": "^5.0.0-alpha.6",
-    "sham-ui-templates": "^5.0.0-alpha.11"
+    "sham-ui": "^5.0.0-alpha.7",
+    "sham-ui-templates": "^5.0.0-alpha.12"
   }
 }
