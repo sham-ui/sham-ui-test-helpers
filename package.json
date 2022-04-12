@@ -1,6 +1,6 @@
 {
   "name": "sham-ui-test-helpers",
-  "version": "5.0.0-alpha.14",
+  "version": "5.0.0-alpha.15",
   "description": "",
   "main": "index.js",
   "module": "index.module.js",
@@ -42,7 +42,7 @@
     "jest-runner-eslint": "^0.6.0",
     "rollup": "^2.47.0",
     "sham-ui-macro": "^3.6.0",
-    "sham-ui-templates-jest-preprocessor": "^1.2.8"
+    "sham-ui-templates-jest-preprocessor": "^1.2.9"
   },
   "dependencies": {
     "@babel/runtime": "^7.14.0",
@@ -52,6 +52,6 @@
     "jest": "^24.9.0",
     "pretty": "^2.0.0",
     "sham-ui": "^5.0.0-alpha.7",
-    "sham-ui-templates": "^5.0.0-alpha.14"
+    "sham-ui-templates": "^5.0.0-alpha.15"
   }
 }
