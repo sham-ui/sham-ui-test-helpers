@@ -1,3 +1,6 @@
+### 5.0.0
+* Update dependencies
+
 ### 5.0.0-alpha.16
 * Update dependencies
 
