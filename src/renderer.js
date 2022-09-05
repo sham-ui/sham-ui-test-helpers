@@ -1,4 +1,4 @@
-import { start, createDI } from 'sham-ui';
+import { start, createDI, createRootContext } from 'sham-ui';
 import pretty from 'pretty';
 
 const DEFAULT_SELECTOR = 'body';
@@ -11,17 +11,10 @@ const DEFAULT_ID = 'component';
  * @return {Object}
  */
 function prepareOptions( options ) {
-    const result = {
+    return {
         ...Object.getPrototypeOf( options ),
         ...options
     };
-    if ( result.container ) {
-        delete result.container;
-    }
-    if ( result.DI ) {
-        delete result.DI;
-    }
-    return result;
 }
 
 
@@ -32,8 +25,9 @@ function prepareOptions( options ) {
  */
 function toJSON( component ) {
     let html = null;
-    if ( component.container !== undefined ) {
-        html = pretty( component.container.innerHTML, {
+    const container = component.ctx.container;
+    if ( container !== undefined ) {
+        html = pretty( container.innerHTML, {
             inline: [ 'code', 'pre', 'em', 'strong', 'span' ]
         } );
         if ( html.indexOf( '\n' ) !== -1 ) {
@@ -55,8 +49,8 @@ function toJSON( component ) {
  * it( 'renders correctly', () => {
  *     const meta = renderer( Label );
  *
- *     expect( meta.component.ID ).toEqual( 'component' );
- *     expect( meta.component.container.innerHTML ).toEqual( 'Foo' );
+ *     expect( meta.component.ctx.ID ).toEqual( 'component' );
+ *     expect( meta.component.ctx.container.innerHTML ).toEqual( 'Foo' );
  * } );
  *
  * @example
@@ -71,27 +65,29 @@ function toJSON( component ) {
  *
  * @param {Class<Component>} componentClass Component class for rendering
  * @param {Object} [componentOptions={}] Options
+ * @param {Object} [context={}] Extra root context parameters
  * @return {RenderResult}
  */
 export default function renderer(
     componentClass,
-    componentOptions = {}
+    componentOptions = {},
+    context = {}
 ) {
-    const DI = 'DI' in componentOptions ?
+    const DI = 'DI' in context ?
         componentOptions.DI :
         createDI()
     ;
-    const options = {
+    const ctx = createRootContext( {
         DI,
         ID: DEFAULT_ID,
         container: document.querySelector( DEFAULT_SELECTOR ),
-        ...componentOptions
-    };
+        ...context
+    } );
 
     DI.resolve( 'sham-ui:store' ).byId.clear();
-    options.container.innerHTML = '';
+    ctx.container.innerHTML = '';
 
-    const component = new componentClass( options );
+    const component = new componentClass( ctx, componentOptions );
     start( DI );
 
     return {

@@ -35,6 +35,7 @@ Render component with options
 
 -   `componentClass` **Class&lt;[Component](#component)>** Component class for rendering
 -   `componentOptions` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options (optional, default `{}`)
+-   `context` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Extra root context parameters (optional, default `{}`)
 
 ##### Examples
 
@@ -45,8 +46,8 @@ import renderer from 'sham-ui-test-helpers';
 it( 'renders correctly', () => {
     const meta = renderer( Label );
 
-    expect( meta.component.ID ).toEqual( 'component' );
-    expect( meta.component.container.innerHTML ).toEqual( 'Foo' );
+    expect( meta.component.ctx.ID ).toEqual( 'component' );
+    expect( meta.component.ctx.container.innerHTML ).toEqual( 'Foo' );
 } );
 ```
 

@@ -147,7 +147,9 @@ it( 'inline compiler don\'t remove data-test attributes', () => {
             title: 'Content'
         }
     );
-    expect( component.container.querySelector( '[data-test-label="ref-name"]' ).textContent ).toBe(
+    expect(
+        component.ctx.container.querySelector( '[data-test-label="ref-name"]' ).textContent
+    ).toBe(
         'Content'
     );
 } );
@@ -174,7 +176,9 @@ it( 'sfc compiler don\'t remove data-test attributes', () => {
             
         `
     );
-    expect( component.container.querySelector( '[data-test-label="ref-name"]' ).textContent ).toBe(
+    expect(
+        component.ctx.container.querySelector( '[data-test-label="ref-name"]' ).textContent
+    ).toBe(
         'Content'
     );
 } );

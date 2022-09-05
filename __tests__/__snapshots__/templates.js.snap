@@ -3,7 +3,6 @@
 exports[`pretty html 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "label": "Link label",
     "url": "127.0.0.1",
   },
@@ -20,7 +19,6 @@ Object {
 exports[`pretty html 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "label": "Link label",
     "url": "127.0.0.1",
   },
@@ -37,7 +35,6 @@ Object {
 exports[`single file component 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "Default content",
     "title": "Default title",
   },
@@ -51,7 +48,6 @@ Object {
 exports[`single file component 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "Custom content",
     "title": "Custom title",
   },
@@ -65,7 +61,6 @@ Object {
 exports[`snapshot correctly 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "label": "Link label",
     "url": "127.0.0.1",
   },
@@ -76,7 +71,6 @@ Object {
 exports[`snapshot correctly 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "label": "Link label",
     "url": "127.0.0.1",
   },
@@ -87,7 +81,6 @@ Object {
 exports[`snapshot correctly 3`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "label": "Updated link label",
     "url": "127.0.0.1",
   },

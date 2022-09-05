@@ -3,7 +3,6 @@
 exports[`inline 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "content from options",
     "title": "title from options",
   },
@@ -19,7 +18,6 @@ Object {
 exports[`inline 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "new content",
     "title": "new title",
   },
@@ -35,7 +33,6 @@ Object {
 exports[`inline with mappings 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "content from options",
     "title": "title from options",
   },
@@ -53,7 +50,6 @@ Object {
 exports[`inline with mappings 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "new content",
     "title": "new title",
   },
@@ -71,7 +67,6 @@ Object {
 exports[`sfc 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "content from sfc options",
     "title": "title from sfc options",
   },
@@ -85,7 +80,6 @@ Object {
 exports[`sfc 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "new sfc content",
     "title": "new sfc title",
   },
@@ -99,7 +93,6 @@ Object {
 exports[`sfc with mappings 1`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "content from sfc options",
     "title": "title from sfc options",
   },
@@ -115,7 +108,6 @@ Object {
 exports[`sfc with mappings 2`] = `
 Object {
   "Options": Object {
-    "ID": "component",
     "content": "new sfc content",
     "title": "new sfc title",
   },
