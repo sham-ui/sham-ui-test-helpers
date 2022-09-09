@@ -1,3 +1,6 @@
+### 6.0.0-alpha.2
+* Fix resolve `DI` from `context` argument
+
 ### 6.0.0-alpha.1
 * Update dependencies
 
@@ -21,7 +24,7 @@
 
 ### 5.0.0-alpha.11
 * Update dependencies
-
+ 
 ### 5.0.0-alpha.10
 * Update dependencies
 

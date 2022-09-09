@@ -74,7 +74,7 @@ export default function renderer(
     context = {}
 ) {
     const DI = 'DI' in context ?
-        componentOptions.DI :
+        context.DI :
         createDI()
     ;
     const ctx = createRootContext( {
