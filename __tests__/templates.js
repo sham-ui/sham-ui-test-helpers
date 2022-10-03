@@ -8,9 +8,9 @@ it( 'renders correctly', () => {
         url: '127.0.0.1',
         label: 'Link label'
     } );
-    expect( meta.component.ctx.ID ).toEqual( 'component' );
+    expect( meta.ctx.ID ).toEqual( 'component' );
     expect(
-        meta.component.ctx.container.innerHTML
+        meta.ctx.container.innerHTML
     ).toEqual( '<a href="127.0.0.1">Link label</a>' );
 } );
 

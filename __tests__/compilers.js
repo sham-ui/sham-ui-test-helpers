@@ -136,7 +136,7 @@ it( 'sfc with mappings', () => {
 
 
 it( 'inline compiler don\'t remove data-test attributes', () => {
-    const { component } = renderer(
+    const { ctx } = renderer(
         compile`
             <div data-test-label={{elemRef}}>
                 {{title}}
@@ -148,7 +148,7 @@ it( 'inline compiler don\'t remove data-test attributes', () => {
         }
     );
     expect(
-        component.ctx.container.querySelector( '[data-test-label="ref-name"]' ).textContent
+        ctx.container.querySelector( '[data-test-label="ref-name"]' ).textContent
     ).toBe(
         'Content'
     );
@@ -156,7 +156,7 @@ it( 'inline compiler don\'t remove data-test attributes', () => {
 
 
 it( 'sfc compiler don\'t remove data-test attributes', () => {
-    const { component } = renderer(
+    const { ctx } = renderer(
         compileAsSFC`
             <template>
                 <div data-test-label={{elemRef}}>
@@ -177,7 +177,7 @@ it( 'sfc compiler don\'t remove data-test attributes', () => {
         `
     );
     expect(
-        component.ctx.container.querySelector( '[data-test-label="ref-name"]' ).textContent
+        ctx.container.querySelector( '[data-test-label="ref-name"]' ).textContent
     ).toBe(
         'Content'
     );

@@ -20,12 +20,13 @@ function prepareOptions( options ) {
 
 /**
  * @inner
+ * @param {Object} ctx
  * @param {Component} component
  * @return {RenderResultSnapshot}
  */
-function toJSON( component ) {
+function toJSON( ctx, component ) {
     let html = null;
-    const container = component.ctx.container;
+    const container = ctx.container;
     if ( container !== undefined ) {
         html = pretty( container.innerHTML, {
             inline: [ 'code', 'pre', 'em', 'strong', 'span' ]
@@ -49,8 +50,8 @@ function toJSON( component ) {
  * it( 'renders correctly', () => {
  *     const meta = renderer( Label );
  *
- *     expect( meta.component.ctx.ID ).toEqual( 'component' );
- *     expect( meta.component.ctx.container.innerHTML ).toEqual( 'Foo' );
+ *     expect( meta.ctx.ID ).toEqual( 'component' );
+ *     expect( meta.ctx.container.innerHTML ).toEqual( 'Foo' );
  * } );
  *
  * @example
@@ -92,9 +93,10 @@ export default function renderer(
 
     return {
         DI,
+        ctx,
         component,
         toJSON() {
-            return toJSON( component );
+            return toJSON( ctx, component );
         }
     };
 }
@@ -117,6 +119,7 @@ export default function renderer(
  * @typedef {Object} RenderResult
  * @property {Component} component Rendered component instance
  * @property {DI} DI Container, used for render
+ * @property {Object} ctx Context of rendered component
  * @property {ToJSON} toJSON Dump to JSON for jest's snapshot testing
  */
 

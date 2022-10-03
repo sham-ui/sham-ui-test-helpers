@@ -46,8 +46,8 @@ import renderer from 'sham-ui-test-helpers';
 it( 'renders correctly', () => {
     const meta = renderer( Label );
 
-    expect( meta.component.ctx.ID ).toEqual( 'component' );
-    expect( meta.component.ctx.container.innerHTML ).toEqual( 'Foo' );
+    expect( meta.ctx.ID ).toEqual( 'component' );
+    expect( meta.ctx.container.innerHTML ).toEqual( 'Foo' );
 } );
 ```
 
@@ -88,6 +88,7 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 -   `component` **[Component](#component)** Rendered component instance
 -   `DI` **[DI](#di)** Container, used for render
+-   `ctx` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Context of rendered component
 -   `toJSON` **[ToJSON](#tojson)** Dump to JSON for jest's snapshot testing
 
 #### ToJSON
