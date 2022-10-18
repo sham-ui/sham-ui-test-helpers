@@ -1,6 +1,10 @@
+### 6.0.0-alpha.4
+* Update dependencies
+
 ### 6.0.0-alpha.3
 * Update dependencies
 * Add `ctx` to `RenderResult`
+* Fix reset component's context after component remove
 
 ### 6.0.0-alpha.2
 * Fix resolve `DI` from `context` argument
